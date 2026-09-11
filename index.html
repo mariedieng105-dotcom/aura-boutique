@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AURA — Mode Féminine Premium | Robes, Ensembles &amp; Accessoires</title>
+<meta name="description" content="AURA — boutique de mode féminine premium. Robes, ensembles, blazers, sacs et chaussures élégants. Livraison au Sénégal, paiement à la livraison disponible.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E✦%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== TOP BAR ===== -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <span class="topbar-item">Livraison gratuite à partir de 50 000 FCFA</span>
+    <span class="topbar-item">Paiement à la livraison disponible</span>
+    <span class="topbar-item">Service client : +221 77 123 45 67</span>
+  </div>
+</div>
+
+<!-- ===== HEADER ===== -->
+<header class="header" id="header">
+  <div class="header-inner">
+    <button class="burger" id="burgerBtn" aria-label="Ouvrir le menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <a href="#accueil" class="logo">
+      <span class="logo-word">AURA</span>
+      <span class="logo-sub">Mode · Élégance · Vous</span>
+    </a>
+
+    <nav class="nav-main" id="navMain">
+      <a href="#accueil" class="nav-link">Accueil</a>
+      <a href="#boutique" class="nav-link">Boutique</a>
+      <a href="#nouvelle-collection" class="nav-link">Nouvelle collection</a>
+      <a href="#lookbook" class="nav-link">Lookbook</a>
+      <a href="#apropos" class="nav-link">À propos</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <div class="search-box">
+        <svg viewBox="0 0 24 24" class="icon-svg"><path d="M21 21l-4.35-4.35m1.35-5.15a7.5 7.5 0 11-15 0 7.5 7.5 0 0115 0z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <input type="text" id="searchInput" placeholder="Rechercher un produit...">
+      </div>
+      <button class="icon-btn" id="favBtn" aria-label="Favoris">
+        <svg viewBox="0 0 24 24" class="icon-svg"><path d="M12 21s-7.5-4.6-10-9.1C0.3 8.4 2 4.8 5.6 4.2c2-.3 3.9.6 5 2.2 1.1-1.6 3-2.5 5-2.2 3.6.6 5.3 4.2 3.6 7.7C19.5 16.4 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        <span class="badge" id="favCount">0</span>
+      </button>
+      <button class="icon-btn" id="accountBtn" aria-label="Compte">
+        <svg viewBox="0 0 24 24" class="icon-svg"><circle cx="12" cy="8" r="3.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4.5 20c1.4-3.8 4.6-5.8 7.5-5.8s6.1 2 7.5 5.8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+      <button class="icon-btn cart-btn" id="cartBtn" aria-label="Panier">
+        <svg viewBox="0 0 24 24" class="icon-svg"><path d="M6 8h12l-1 12.5a1.5 1.5 0 01-1.5 1.5h-7a1.5 1.5 0 01-1.5-1.5L6 8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 8V6a3 3 0 016 0v2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+        <span class="badge" id="cartCount">0</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile search (visible on small screens under header) -->
+  <div class="mobile-search">
+    <svg viewBox="0 0 24 24" class="icon-svg"><path d="M21 21l-4.35-4.35m1.35-5.15a7.5 7.5 0 11-15 0 7.5 7.5 0 0115 0z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    <input type="text" id="searchInputMobile" placeholder="Rechercher un produit...">
+  </div>
+</header>
+
+<!-- ===== MOBILE NAV DRAWER ===== -->
+<div class="mobile-nav-overlay" id="mobileOverlay"></div>
+<nav class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-head">
+    <span class="logo-word">AURA</span>
+    <button id="mobileCloseBtn" class="mobile-close" aria-label="Fermer">&times;</button>
+  </div>
+  <a href="#accueil" class="mobile-nav-link">Accueil</a>
+  <a href="#boutique" class="mobile-nav-link">Boutique</a>
+  <a href="#nouvelle-collection" class="mobile-nav-link">Nouvelle collection</a>
+  <a href="#lookbook" class="mobile-nav-link">Lookbook</a>
+  <a href="#apropos" class="mobile-nav-link">À propos</a>
+  <a href="#contact" class="mobile-nav-link">Contact</a>
+  <div class="mobile-nav-foot">
+    <p>Service client</p>
+    <a href="tel:+221771234567">+221 77 123 45 67</a>
+  </div>
+</nav>
+
+<main>
+<!-- ===== HERO ===== -->
+<section class="hero" id="accueil">
+  <div class="hero-slides" id="heroSlides">
+    <div class="hero-slide is-active" style="background-image:linear-gradient(100deg, rgba(250,247,242,.92) 0%, rgba(250,247,242,.55) 38%, rgba(30,24,20,.15) 100%), url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1600&q=80&auto=format&fit=crop')">
+      <div class="hero-content">
+        <p class="hero-eyebrow">✦ Nouvelle collection</p>
+        <h1 class="hero-title">Votre style.<br>Votre aura.</h1>
+        <p class="hero-text">Découvrez des pièces uniques, élégantes et intemporelles pour révéler la meilleure version de vous-même.</p>
+        <a href="#boutique" class="btn btn-dark">Découvrir la collection <span class="arrow">→</span></a>
+      </div>
+    </div>
+    <div class="hero-slide" style="background-image:linear-gradient(100deg, rgba(250,247,242,.92) 0%, rgba(250,247,242,.55) 38%, rgba(30,24,20,.15) 100%), url('https://images.unsplash.com/photo-1509319117193-57bab727e09d?w=1600&q=80&auto=format&fit=crop')">
+      <div class="hero-content">
+        <p class="hero-eyebrow">✦ Édition limitée</p>
+        <h1 class="hero-title">L'élégance,<br>sans effort.</h1>
+        <p class="hero-text">Des silhouettes fluides et raffinées, pensées pour la femme moderne, confiante et libre.</p>
+        <a href="#nouvelle-collection" class="btn btn-dark">Voir la nouveauté <span class="arrow">→</span></a>
+      </div>
+    </div>
+    <div class="hero-slide" style="background-image:linear-gradient(100deg, rgba(250,247,242,.92) 0%, rgba(250,247,242,.55) 38%, rgba(30,24,20,.15) 100%), url('https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1600&q=80&auto=format&fit=crop')">
+      <div class="hero-content">
+        <p class="hero-eyebrow">✦ Offre spéciale</p>
+        <h1 class="hero-title">-10% sur votre<br>première commande</h1>
+        <p class="hero-text">Utilisez le code AURA10 lors de votre commande et révélez votre style dès aujourd'hui.</p>
+        <a href="#boutique" class="btn btn-dark">Profiter de l'offre <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+  <button class="hero-arrow hero-prev" id="heroPrev" aria-label="Précédent">‹</button>
+  <button class="hero-arrow hero-next" id="heroNext" aria-label="Suivant">›</button>
+  <div class="hero-counter"><span id="heroIndex">1</span> / 3</div>
+  <div class="hero-dots" id="heroDots"></div>
+</section>
+
+<!-- ===== CATEGORIES ===== -->
+<section class="section categories-section">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2 class="section-title">Nos catégories</h2>
+        <p class="section-sub">Trouvez la pièce parfaite pour chaque occasion.</p>
+      </div>
+      <a href="#boutique" class="link-arrow">Voir tout <span class="arrow">→</span></a>
+    </div>
+    <div class="categories-grid" id="categoriesGrid"></div>
+  </div>
+</section>
+
+<!-- ===== COUPS DE COEUR ===== -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2 class="section-title">Nos coups de cœur</h2>
+        <p class="section-sub">Les pièces les plus aimées du moment.</p>
+      </div>
+      <a href="#boutique" class="link-arrow">Voir toute la boutique <span class="arrow">→</span></a>
+    </div>
+    <div class="products-grid" id="favoritesGrid"></div>
+  </div>
+</section>
+
+<!-- ===== LOOKBOOK BANNER ===== -->
+<section class="section lookbook-banner" id="lookbook">
+  <div class="container lb-grid">
+    <div class="lb-photo lb-photo-main" style="background-image:url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=1200&q=80&auto=format&fit=crop')">
+      <button class="lb-nav lb-prev" aria-label="Précédent">‹</button>
+      <div class="lb-caption">
+        <h3>Lookbook</h3>
+        <p>Inspirez-vous de nos looks</p>
+        <a href="#lookbook-gallery" class="btn btn-light">Voir le lookbook <span class="arrow">→</span></a>
+      </div>
+      <button class="lb-nav lb-next" aria-label="Suivant">›</button>
+    </div>
+    <div class="lb-text">
+      <h3>L'élégance<br>au quotidien</h3>
+      <p>AURA, c'est plus qu'une boutique, c'est une vision : celle d'une femme confiante, libre et élégante.</p>
+      <a href="#apropos" class="btn btn-outline-dark">En savoir plus <span class="arrow">→</span></a>
+    </div>
+    <div class="lb-photo lb-photo-side" style="background-image:url('https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=900&q=80&auto=format&fit=crop')"></div>
+  </div>
+</section>
+
+<!-- ===== PROMO BANNER ===== -->
+<section class="section">
+  <div class="container">
+    <div class="promo-banner">
+      <div class="promo-photo" style="background-image:url('https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=900&q=80&auto=format&fit=crop')"></div>
+      <div class="promo-content">
+        <p class="promo-tag">Offre spéciale</p>
+        <h2>-10% sur votre première commande</h2>
+        <p class="promo-text">Utilisez le code <strong>AURA10</strong> lors du paiement.</p>
+        <a href="#boutique" class="btn btn-dark">Découvrir la boutique <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== NOUVELLE COLLECTION ===== -->
+<section class="section" id="nouvelle-collection">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2 class="section-title">Nouvelle collection</h2>
+        <p class="section-sub">Les toutes dernières arrivées, en édition limitée.</p>
+      </div>
+    </div>
+    <div class="products-grid" id="newGrid"></div>
+  </div>
+</section>
+
+<!-- ===== LOOKBOOK GALLERY ===== -->
+<section class="section lookbook-gallery" id="lookbook-gallery">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2 class="section-title">Galerie lookbook</h2>
+        <p class="section-sub">Nos tenues préférées, mises en scène pour vous inspirer.</p>
+      </div>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item tall" style="background-image:url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=900&q=80&auto=format&fit=crop')"><span>Silhouette Ivoire</span></div>
+      <div class="gallery-item" style="background-image:url('https://images.unsplash.com/photo-1591369822096-ffd140ec948f?w=700&q=80&auto=format&fit=crop')"><span>Tailleur Bureau</span></div>
+      <div class="gallery-item" style="background-image:url('https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=700&q=80&auto=format&fit=crop')"><span>Soirée Noire</span></div>
+      <div class="gallery-item tall" style="background-image:url('https://images.unsplash.com/photo-1509319117193-57bab727e09d?w=900&q=80&auto=format&fit=crop')"><span>Casual Chic</span></div>
+      <div class="gallery-item" style="background-image:url('https://images.unsplash.com/photo-1520975954732-35dd22299614?w=700&q=80&auto=format&fit=crop')"><span>Trench Beige</span></div>
+      <div class="gallery-item" style="background-image:url('https://images.unsplash.com/photo-1483985988355-763728e1935b?w=700&q=80&auto=format&fit=crop')"><span>Édition Champagne</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== À PROPOS ===== -->
+<section class="section about-section" id="apropos">
+  <div class="container about-grid">
+    <div class="about-photo" style="background-image:url('https://images.unsplash.com/photo-1445205170230-053b83016050?w=900&q=80&auto=format&fit=crop')"></div>
+    <div class="about-content">
+      <p class="eyebrow">✦ Notre histoire</p>
+      <h2 class="section-title">Née pour révéler<br>votre lumière intérieure</h2>
+      <p class="about-text">AURA est née à Dakar d'une conviction simple : chaque femme mérite une garde-robe qui lui ressemble. Depuis nos débuts, nous sélectionnons des matières nobles et des coupes intemporelles pour créer des pièces qui traversent les saisons sans jamais se démoder.</p>
+      <p class="about-text">Notre équipe de créatrices travaille avec des ateliers locaux et des fournisseurs responsables afin d'offrir une mode élégante, durable et accessible à toutes les femmes d'Afrique de l'Ouest et d'ailleurs.</p>
+      <div class="about-stats">
+        <div class="stat"><strong>+8 000</strong><span>Clientes satisfaites</span></div>
+        <div class="stat"><strong>120+</strong><span>Pièces exclusives</span></div>
+        <div class="stat"><strong>4.9/5</strong><span>Note moyenne</span></div>
+      </div>
+      <a href="#contact" class="btn btn-outline-dark">Nous contacter <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BOUTIQUE (catalogue complet) ===== -->
+<section class="section shop-section" id="boutique">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2 class="section-title">Toute la boutique</h2>
+        <p class="section-sub">Filtrez, triez et trouvez la pièce qui vous ressemble.</p>
+      </div>
+    </div>
+
+    <div class="shop-layout">
+      <aside class="shop-filters">
+        <div class="filter-block">
+          <h4>Catégories</h4>
+          <div class="filter-list" id="categoryFilters"></div>
+        </div>
+        <div class="filter-block">
+          <h4>Prix</h4>
+          <div class="filter-list" id="priceFilters">
+            <label class="filter-option"><input type="radio" name="priceFilter" value="all" checked><span>Tous les prix</span></label>
+            <label class="filter-option"><input type="radio" name="priceFilter" value="0-20000"><span>Moins de 20 000 FCFA</span></label>
+            <label class="filter-option"><input type="radio" name="priceFilter" value="20000-40000"><span>20 000 - 40 000 FCFA</span></label>
+            <label class="filter-option"><input type="radio" name="priceFilter" value="40000-999999"><span>Plus de 40 000 FCFA</span></label>
+          </div>
+        </div>
+        <button class="btn btn-outline-dark btn-block" id="resetFilters">Réinitialiser les filtres</button>
+      </aside>
+
+      <div class="shop-main">
+        <div class="shop-toolbar">
+          <p class="results-count"><span id="resultsCount">0</span> produit(s)</p>
+          <div class="toolbar-right">
+            <select id="sortSelect" class="sort-select">
+              <option value="featured">Trier par : En vedette</option>
+              <option value="new">Nouveautés</option>
+              <option value="price-asc">Prix croissant</option>
+              <option value="price-desc">Prix décroissant</option>
+              <option value="rating">Meilleures notes</option>
+            </select>
+          </div>
+        </div>
+        <div class="active-chips" id="activeChips"></div>
+        <div class="products-grid" id="shopGrid"></div>
+        <p class="empty-state" id="emptyState" hidden>Aucun produit ne correspond à votre recherche. Essayez d'autres filtres.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== NEWSLETTER (mid page, extra) ===== -->
+<section class="section newsletter-section">
+  <div class="container newsletter-inner">
+    <div>
+      <h2>Restez inspirée</h2>
+      <p>Recevez -10% de réduction et nos nouveautés en avant-première.</p>
+    </div>
+    <form class="newsletter-form" id="newsletterForm2">
+      <input type="email" required placeholder="Votre adresse e-mail">
+      <button type="submit" class="btn btn-dark">S'abonner</button>
+    </form>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="section contact-section" id="contact">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2 class="section-title">Contactez-nous</h2>
+        <p class="section-sub">Une question sur une commande, une taille, une livraison ? Nous sommes là.</p>
+      </div>
+    </div>
+    <div class="contact-grid">
+      <form class="contact-form" id="contactForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cName">Nom complet</label>
+            <input type="text" id="cName" required placeholder="Votre nom">
+          </div>
+          <div class="form-group">
+            <label for="cEmail">E-mail</label>
+            <input type="email" id="cEmail" required placeholder="vous@exemple.com">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="cSubject">Sujet</label>
+          <input type="text" id="cSubject" required placeholder="Sujet de votre message">
+        </div>
+        <div class="form-group">
+          <label for="cMessage">Message</label>
+          <textarea id="cMessage" rows="5" required placeholder="Votre message..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-dark btn-block">Envoyer le message</button>
+        <p class="form-success" id="contactSuccess" hidden>✓ Merci ! Votre message a bien été envoyé. Nous vous répondrons sous 24h.</p>
+      </form>
+      <div class="contact-info">
+        <div class="info-card">
+          <h4>Boutique AURA</h4>
+          <p>Rue 12, Point E<br>Dakar, Sénégal</p>
+        </div>
+        <div class="info-card">
+          <h4>Téléphone</h4>
+          <p><a href="tel:+221771234567">+221 77 123 45 67</a></p>
+        </div>
+        <div class="info-card">
+          <h4>E-mail</h4>
+          <p><a href="mailto:contact@aura-boutique.com">contact@aura-boutique.com</a></p>
+        </div>
+        <div class="info-card">
+          <h4>Horaires</h4>
+          <p>Lun - Sam : 9h - 20h<br>Dimanche : 11h - 18h</p>
+        </div>
+        <a href="https://wa.me/221771234567" target="_blank" rel="noopener" class="btn btn-whatsapp btn-block">
+          <svg viewBox="0 0 24 24" class="icon-svg" width="20" height="20"><path fill="currentColor" d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm0 18.2a8.1 8.1 0 01-4.2-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1s-.7.8-.9 1c-.2.2-.3.2-.6.1a6.7 6.7 0 01-2-1.2 7.4 7.4 0 01-1.4-1.7c-.1-.2 0-.4.1-.5l.4-.5c.1-.1.2-.3.2-.4a.5.5 0 000-.5c-.1-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2c0 1.3.9 2.6 1 2.8.1.2 1.8 2.8 4.4 3.8.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.2-.4-.3z"/></svg>
+          Commander sur WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="#accueil" class="logo">
+        <span class="logo-word">AURA</span>
+        <span class="logo-sub">Mode · Élégance · Vous</span>
+      </a>
+      <p>Rejoignez notre communauté et soyez les premières à découvrir nos nouveautés, nos offres exclusives et nos conseils mode.</p>
+      <form class="newsletter-form" id="newsletterForm">
+        <input type="email" required placeholder="Votre adresse e-mail">
+        <button type="submit">S'abonner</button>
+      </form>
+      <div class="social-row">
+        <a href="#" aria-label="Instagram" class="social-icon">IG</a>
+        <a href="#" aria-label="TikTok" class="social-icon">TT</a>
+        <a href="https://wa.me/221771234567" target="_blank" rel="noopener" aria-label="WhatsApp" class="social-icon">WA</a>
+        <a href="#" aria-label="Pinterest" class="social-icon">PI</a>
+        <a href="#" aria-label="YouTube" class="social-icon">YT</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Liens rapides</h4>
+      <a href="#accueil">Accueil</a>
+      <a href="#boutique">Boutique</a>
+      <a href="#nouvelle-collection">Nouvelle collection</a>
+      <a href="#lookbook">Lookbook</a>
+      <a href="#apropos">À propos</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Service client</h4>
+      <a href="#contact">Livraison &amp; retours</a>
+      <a href="#contact">Paiement sécurisé</a>
+      <a href="#contact">FAQ</a>
+      <a href="#contact">Nous contacter</a>
+    </div>
+    <div class="footer-col">
+      <h4>À propos de NEXORA STUDIO</h4>
+      <p class="footer-note">Ce site est une démonstration e-commerce fictive réalisée par NEXORA STUDIO, agence de création de sites web sur mesure.</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <p>© 2025 AURA. Tous droits réservés. Projet démo par NEXORA STUDIO.</p>
+      <p class="footer-payments">Visa · Mastercard · Orange Money · Wave · Paiement à la livraison</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== CART DRAWER ===== -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<aside class="drawer" id="cartDrawer">
+  <div class="drawer-head">
+    <h3>Votre panier</h3>
+    <button class="drawer-close" id="cartCloseBtn" aria-label="Fermer">&times;</button>
+  </div>
+  <div class="drawer-body" id="cartItems"></div>
+  <div class="drawer-foot">
+    <div class="cart-subtotal">
+      <span>Sous-total</span>
+      <strong id="cartSubtotal">0 FCFA</strong>
+    </div>
+    <p class="cart-note">Frais de livraison calculés à la commande. Livraison gratuite dès 50 000 FCFA.</p>
+    <button class="btn btn-whatsapp btn-block" id="checkoutWhatsapp">
+      <svg viewBox="0 0 24 24" class="icon-svg" width="20" height="20"><path fill="currentColor" d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm0 18.2a8.1 8.1 0 01-4.2-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1s-.7.8-.9 1c-.2.2-.3.2-.6.1a6.7 6.7 0 01-2-1.2 7.4 7.4 0 01-1.4-1.7c-.1-.2 0-.4.1-.5l.4-.5c.1-.1.2-.3.2-.4a.5.5 0 000-.5c-.1-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2c0 1.3.9 2.6 1 2.8.1.2 1.8 2.8 4.4 3.8.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.2-.4-.3z"/></svg>
+      Commander via WhatsApp
+    </button>
+    <button class="btn btn-outline-dark btn-block" id="clearCartBtn">Vider le panier</button>
+  </div>
+</aside>
+
+<!-- ===== FAVORITES DRAWER ===== -->
+<aside class="drawer" id="favDrawer">
+  <div class="drawer-head">
+    <h3>Mes favoris</h3>
+    <button class="drawer-close" id="favCloseBtn" aria-label="Fermer">&times;</button>
+  </div>
+  <div class="drawer-body" id="favItems"></div>
+</aside>
+
+<!-- ===== PRODUCT QUICK VIEW MODAL ===== -->
+<div class="modal-overlay" id="modalOverlay"></div>
+<div class="product-modal" id="productModal">
+  <button class="modal-close" id="modalCloseBtn" aria-label="Fermer">&times;</button>
+  <div class="modal-body" id="modalBody"></div>
+</div>
+
+<!-- ===== TOAST ===== -->
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
